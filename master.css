@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.slider-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+i {
+  font-size: 30px;
+  margin: 0 15px;
+}
+.dots-slider {
+  color: gray;
+  display: flex;
+
+}
+.active {
+  color: black;
+}
