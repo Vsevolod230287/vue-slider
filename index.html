@@ -29,9 +29,10 @@
       </div>
 
       <div class="dots-slider">
-        <i class="fas fa-circle active"></i>
-        <i class="fas fa-circle"></i>
-        <i class="fas fa-circle"></i>
+        <i v-for="dot in arrayImg.length"
+        class="fas fa-circle"
+        :class="(dot-1 == index) ? 'active' : '' "
+        @click="dotClick(dot-1)"></i>
       </div>
 
     </div>

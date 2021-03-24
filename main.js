@@ -10,7 +10,6 @@ var app = new Vue({
       './img/ferrari.jpg',
       './img/kia_forte.jpg'
     ]
-
   },
   methods: {
     next: function() {
@@ -20,15 +19,16 @@ var app = new Vue({
         this.index = 0;
       }
     },
-
     prev: function() {
       if (this.index > 0) {
         this.index--
       } else {
-        this.index = this.arrayImg.length-1;
+        this.index = this.arrayImg.length - 1;
       }
+    },
+    dotClick: function(index) {
+      this.index = index;
     }
   }
-
 
 })
