@@ -13,28 +13,27 @@
 <body>
   <div id="root">
     <div class="slider-container">
-
       <div class="slider">
         <div class="arrow-prev">
           <i class="fas fa-chevron-left" @click="prev"></i>
         </div>
-
         <div class="slider-img">
           <img width="500" :src="arrayImg[index]" alt="">
         </div>
-
         <div class="arrow-next">
           <i class="fas fa-chevron-right" @click="next"></i>
         </div>
       </div>
-
       <div class="dots-slider">
-        <i v-for="dot in arrayImg.length"
+        <i v-for="key in arrayImg.length"
         class="fas fa-circle"
-        :class="(dot-1 == index) ? 'active' : '' "
-        @click="dotClick(dot-1)"></i>
+        :class="(key-1 == index) ? 'active' : '' "
+        @click="dotClick(key-1)"></i>
       </div>
+      <div class="btn">
+        <button type="button" name="button" @click="autoplay">Autoplay/Stop autoplay</button>
 
+      </div>
     </div>
   </div>
 

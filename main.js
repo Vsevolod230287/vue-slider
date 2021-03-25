@@ -9,26 +9,44 @@ var app = new Vue({
       './img/christiann.jpg',
       './img/ferrari.jpg',
       './img/kia_forte.jpg'
-    ]
+    ],
+    id: ''
   },
   methods: {
-    next: function() {
-      if (this.index < this.arrayImg.length - 1) {
-        this.index++
-      } else {
-        this.index = 0;
-      }
-    },
-    prev: function() {
-      if (this.index > 0) {
-        this.index--
-      } else {
-        this.index = this.arrayImg.length - 1;
-      }
-    },
-    dotClick: function(index) {
-      this.index = index;
+    next: function(e){
+      if (e && e.type == 'click') {
+      clearInterval(this.id);
+    }
+    if (this.index < this.arrayImg.length - 1) {
+      this.index++
+    } else {
+      this.index = 0;
+    }
+  },
+  prev: function(e) {
+    if(e.type == 'click'){
+      clearInterval(this.id);
+    }
+    if (this.index > 0) {
+      this.index--
+    } else {
+      this.index = this.arrayImg.length - 1;
+    }
+  },
+  dotClick: function(key) {
+    this.index = key;
+  },
+  autoplay: function() {
+    
+    if(!this.id){
+      this.id = setInterval( () => {
+        this.next();
+      }, 1300)
+    }else {
+      clearInterval(this.id)
+      this.id = ''
     }
   }
+}
 
 })
